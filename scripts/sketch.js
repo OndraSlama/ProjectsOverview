@@ -17,8 +17,8 @@ function setup() {
     
 
     // Create canvas
-    canvasWidth = windowWidth;
-    canvasHeight = windowHeight - 180;
+    canvasWidth = windowWidth-20;
+    canvasHeight = windowHeight - 170;
     backgroundColor = [37, 37, 37];
     // backgroundColor = 100;
     
@@ -49,5 +49,5 @@ function draw() {
 }
 
 function windowResized() {
-    resizeCanvas(windowWidth, windowHeight - 180);
-  }
+    resizeCanvas(windowWidth-20, windowHeight - 170);
+}

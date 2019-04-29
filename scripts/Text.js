@@ -22,11 +22,7 @@ class NewText {
         this.desiredPosition = createVector(x/width, y/height);
         this.desiredSize = this.baseSize/height;
 
-        // Others
-        this.force = 200;
-        this.maxSpeed = 20;
-        this.minSpeed = .05;
-        this.forceDist = size / 4
+        // Others       
         this.interactive = 1;
     }
 
@@ -39,19 +35,20 @@ class NewText {
     }
 
     update() {
-        this.sizeVel = 0.1* (this.desiredSize - this.size/height);
+        this.sizeVel = 0.15* (this.desiredSize - this.size/height);
         this.velocity = p5.Vector.sub(this.desiredPosition, createVector(this.position.x/width, this.position.y/height));
         this.velocity.mult(0.1);
         if(this.interactive){
-            // if(this.inArea()){
+            if(this.inArea()){
                 this.desiredSize = this.baseSize * 0.9
                 this.desiredPosition.x = this.basePosition.x + (mouseX/width - this.basePosition.x)/10;
                 this.desiredPosition.y = this.basePosition.y + (mouseY/height - this.basePosition.y)/10;
-            // }else{
-            //     this.desiredSize = this.baseSize;
-            //     this.desiredPosition.x = this.basePosition.x
-            //     this.desiredPosition.y = this.basePosition.y
-            // }
+            }else{
+                this.desiredSize = this.baseSize;
+                let dist = this.basePosition.dist(createVector(mouseX/width,mouseY/height));
+                this.desiredPosition.x = this.basePosition.x - (mouseX/width - this.basePosition.x)/(1 + max(1, dist*60));
+                this.desiredPosition.y = this.basePosition.y - (mouseY/height - this.basePosition.y)/(1 + max(1, dist*60));
+            }
         }   
 
         this.position.x += this.velocity.x*width;
@@ -85,7 +82,12 @@ class NewText {
     }
 
     clickFunction() {
-        //runFromMouse();
+        if(this.inArea()){
+            this.baseSize = this.baseSize * 1.5;
+            setTimeout(function(text){
+                text.baseSize = text.baseSize * 0.66;
+            },200, this)
+        }
     }
 
     pressedFunction() {  

@@ -11,7 +11,7 @@ class NewText {
         this.horizontalAlign = CENTER;
         this.verticalAlign = CENTER;
         this.color = color;    
-        this.baseSize = size/height;
+        this.baseSize = size/width;
         this.basePosition = createVector(x/width, y/height);
 
         //State properties
@@ -20,7 +20,7 @@ class NewText {
         this.position = createVector(x, y+50);
         this.size = 0;
         this.desiredPosition = createVector(x/width, y/height);
-        this.desiredSize = this.baseSize/height;
+        this.desiredSize = this.baseSize;
 
         // Others       
         this.interactive = 1;
@@ -35,7 +35,7 @@ class NewText {
     }
 
     update() {
-        this.sizeVel = 0.15* (this.desiredSize - this.size/height);
+        this.sizeVel = 0.15* (this.desiredSize - this.size/width);
         this.velocity = p5.Vector.sub(this.desiredPosition, createVector(this.position.x/width, this.position.y/height));
         this.velocity.mult(0.1);
         if(this.interactive){
@@ -53,7 +53,8 @@ class NewText {
 
         this.position.x += this.velocity.x*width;
         this.position.y += this.velocity.y*height;
-        this.size += this.sizeVel * height;     
+        this.size += this.sizeVel * width;    
+        this.bounds = font.textBounds(this.string, this.position.x, this.position.y, this.size); 
     }
 
     changeText(newString) {

@@ -47,9 +47,9 @@ function setup() {
     // Others
     mouse = createVector(mouseX, mouseY);        
     
-    texts.push(new NewText("Hi!", width/2, height*.3, height * 0.2))    
-    texts.push(new NewText("Welcome to my web.", width/2, height*.5)) 
-    texts.push(new NewText("Feel free to *click* around.", width/2, height*.8, height * 0.05))
+    texts.push(new NewText("Hi!", width/2, height*.3, width * 0.095))    
+    texts.push(new NewText("Welcome to my web.", width/2, height*.5, width * .05) )
+    texts.push(new NewText("Feel free to *click* around.", width/2, height*.8, width * 0.025))
 }
 
 function draw() {

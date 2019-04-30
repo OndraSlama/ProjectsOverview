@@ -1,3 +1,7 @@
+html{
+    overflow-x: hidden;
+}
+
 body{
     /* Font settings */
     font-family: Arial, Helvetica;

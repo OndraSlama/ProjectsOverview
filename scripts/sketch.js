@@ -8,7 +8,7 @@ let gif_loadImg, gif_createImg;
 let showGif = 0;
 let gifPos;
 let gifTime;
-let gifPauseTime = 0;
+let gifReady = 0;
 
 // Arrays
 let texts = [];
@@ -22,7 +22,7 @@ function preload(){
 function setup() {
     // Create canvas
     canvasWidth = windowWidth-20;
-    canvasHeight = windowHeight - 170;
+    canvasHeight = windowHeight - 185;
     backgroundColor = [37, 37, 37];
     frameRate(60);
     // backgroundColor = 100;
@@ -30,8 +30,8 @@ function setup() {
     canvas = createCanvas(canvasWidth, canvasHeight);
     canvas.parent('sketch-holder');    
     canvas.mouseClicked(function(){
-        if(gifPauseTime > 60){
-            gifPauseTime = 0;
+        if(gifReady == 1){
+            gifReady = 0;
             showGif = 1;
             gifPos = createVector(mouseX, mouseY);
             gif_createImg = createImg("https://media.giphy.com/media/yJFeycRK2DB4c/giphy.gif");
@@ -69,12 +69,12 @@ function draw() {
         gif_createImg.position(10000, 0);
         showGif = 0;
         gifTime = 0;
-        gifPauseTime++;
+        gifReady = 1;
     }
 }
 
 function windowResized() {
-    resizeCanvas(windowWidth-20, windowHeight - 170);
+    resizeCanvas(windowWidth-20, windowHeight - 185);
 }
 
 function mouseClicked(){    

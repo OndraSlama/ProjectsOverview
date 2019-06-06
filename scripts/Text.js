@@ -15,14 +15,20 @@ class NewText {
         this.basePosition = createVector(x/width, y/height);
 
         //State properties
-        this.velocity = createVector();
+        this.positionVel = createVector();
         this.sizeVel = 0;
-        this.position = createVector(x, y+50);
+        this.position = createVector(x, y);
         this.size = 0;
         this.desiredPosition = createVector(x/width, y/height);
         this.desiredSize = this.baseSize;
 
-        // Others       
+        // Others      
+        this.positionSpeedFactor = 20;
+        this.sizeSpeedFactor = 30;
+        this.positionDragFactor = .9;
+        this.sizeDragFactor = .87;
+        this.positionMass = 1000;
+        this.sizeMass = 1000; 
         this.interactive = 1;
     }
 
@@ -34,10 +40,8 @@ class NewText {
         text(this.string, this.position.x, this.position.y);
     }
 
-    update() {
-        this.sizeVel = 0.15* (this.desiredSize - this.size/width);
-        this.velocity = p5.Vector.sub(this.desiredPosition, createVector(this.position.x/width, this.position.y/height));
-        this.velocity.mult(0.1);
+    update() {       
+
         if(this.interactive){
             if(this.inArea()){
                 this.desiredSize = this.baseSize * 0.9
@@ -46,15 +50,33 @@ class NewText {
             }else{
                 this.desiredSize = this.baseSize;
                 let dist = this.basePosition.dist(createVector(mouseX/width,mouseY/height));
-                this.desiredPosition.x = this.basePosition.x - (mouseX/width - this.basePosition.x)/(1 + max(1, dist*60));
-                this.desiredPosition.y = this.basePosition.y - (mouseY/height - this.basePosition.y)/(1 + max(1, dist*60));
+                if (mouseIsPressed){
+                    this.desiredPosition.x = this.basePosition.x - (mouseX/width - this.basePosition.x)/(1 + max(1, dist*10));
+                    this.desiredPosition.y = this.basePosition.y - (mouseY/height - this.basePosition.y)/(1 + max(1, dist*10));
+                }else if (dist < this.baseSize * 2){
+                    this.desiredPosition.x = this.basePosition.x - (mouseX/width - this.basePosition.x)/(max(1, dist*100));
+                    this.desiredPosition.y = this.basePosition.y - (mouseY/height - this.basePosition.y)/(max(1, dist*100));
+                }else{
+                    this.desiredPosition.x = this.basePosition.x
+                    this.desiredPosition.y = this.basePosition.y
+                }
             }
         }   
 
-        this.position.x += this.velocity.x*width;
-        this.position.y += this.velocity.y*height;
-        this.size += this.sizeVel * width;    
-        this.bounds = font.textBounds(this.string, this.position.x, this.position.y, this.size); 
+        let sizeForce = this.sizeSpeedFactor * (this.desiredSize * width - this.size);
+        let positionForce = createVector()
+        positionForce.x = this.desiredPosition.x * width - this.position.x;
+        positionForce.y = this.desiredPosition.y * height - this.position.y;
+        positionForce.mult(this.positionSpeedFactor);
+
+        this.positionVel.add(p5.Vector.mult(positionForce, 1 / this.positionMass))
+        this.sizeVel += sizeForce / this.sizeMass;
+        this.positionVel.mult(this.positionDragFactor);
+        this.sizeVel *= this.sizeDragFactor;
+        this.position.x += this.positionVel.x;
+        this.position.y += this.positionVel.y;
+        this.size += this.sizeVel;    
+        this.bounds = font.textBounds(this.string, this.position.x, this.position.y, this.size);
     }
 
     changeText(newString) {
@@ -91,7 +113,7 @@ class NewText {
         }
     }
 
-    pressedFunction() {  
+    pressedFunction() {        
     }
 }
 

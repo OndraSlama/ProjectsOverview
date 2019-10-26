@@ -55,89 +55,79 @@ a:hover{
 
 
 /* Header */
-header{
-    background: #1f1f1f;
-    color: #ffffff;
-    padding-top: 30px;
-    min-height: 70px;
-    
-    /* border-bottom: 3px solid #e8491d; */
-}
 
-header a{
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 30px;
+header {
+    /* width: 80%; */
+    display: flex;
+    justify-content: center;
+    background: #1f1f1f;
+
 }
 
 header img{
     width: 25px; 
 }
 
-header ul{  
-    display: flex;  
-    align-items: stretch; /* Default */
-    justify-content: space-between;   
-    width: 80%;
-    margin: 0 auto;
-    padding: 0;
+.navigation {
+  list-style: none;
+  width: 80%;
+  margin: 0;  
+
+  background: #1f1f1f;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 
-header li{
-    float: left;
-    flex: 0 1 auto; /* Default */
-    list-style-type: none;
-    padding: 0 30px 0 30px;
-    /* border: 3px solid green;  */
-    
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white;
+  font-size: 30px;
 }
 
-
-@media screen and (min-width: 1700px) {    
-    
-    header .table{
-        display: table;
-        margin: 0 auto
-    }  
-    
-    header ul{  
-        display: inline;
-    }
-
-    header li{
-        display: inline;
-        padding: 0 150px 0 150px;
-        /* border: 3px solid green;  */
-        
-    }
-    
+.navigation a:hover {
+  background: #252525
 }
 
-@media screen and (max-width: 1000px) {
-    header{
-        padding: 1% 0;
-        min-height: 7vw;
+@media all and (max-width: 800px) {
+    .navigation {
+        justify-content: space-around;
     }
-
-    header nav {    
-        margin-top: 1vw;
-    }
-
-    header .container{
-        padding: 1% 0;         
-    }
-
-    header a{
-        font-size: 3vw;
+    .navigation a{
+        font-size: 3.7vw;
     }
 
     header img{
-        width: 2.6vw; 
-    }
-    header li{
-        padding: 0 10px 0 10px;        
+        width: 3.2vw; 
     }
 }
+
+@media all and (max-width: 600px) {
+
+  .navigation {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .navigation a { 
+    text-align: center; 
+    padding: 10px;
+    border-top: 1px solid rgba(255,255,255,0.3); 
+    border-bottom: 1px solid rgba(0,0,0,0.1); 
+  }
+
+  
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}
+
+
 
 /* Projects */
 

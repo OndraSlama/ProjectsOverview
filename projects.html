@@ -1,117 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width = device-width">
-    <meta name="description" content="My JS projects overview">
-    <meta name="keywords" content="JS, personal web, projects overview">
-    <meta name="author" content="Ondřej Sláma">
-    <title>Projects Overview</title>
-    <link rel="stylesheet" href="./css/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width = device-width">
+	<meta name="description" content="My JS projects overview">
+	<meta name="keywords" content="JS, personal web, projects overview">
+	<meta name="author" content="Ondřej Sláma">
+	<title>Projects Overview</title>
+	<link rel="stylesheet" href="./css/style.css">
 
 
 </head>
+
 <body>
-    <header>
-        <ul class="navigation">
-            <li><a class="inactive" href="index.html"> <img src="./images/home.svg"> Home</a> </li>
-            <li><a class="active" href="projects.html"><img src="./images/projects.svg"> Projects</a></li>
-            <li><a class="inactive" href="aboutme.html"><img src="./images/aboutme.svg"> About Me</a></li>
-        </ul>
-    </header> 
+	<header>
+		<ul class="navigation">
+			<li><a class="inactive" href="index.html"> <img src="./images/home.svg"> Home</a> </li>
+			<li><a class="active" href="projects.html"><img src="./images/projects.svg"> Projects</a></li>
+			<li><a class="inactive" href="aboutme.html"><img src="./images/aboutme.svg"> About Me</a></li>
+		</ul>
+	</header>
 
-    <section class="projectsHeader">
-        <div class="container">
-                <div class="myTitle">My (un)finished personal projects</div>
-                <a href="https://github.com/OndraSlama">
-                    <div class="gitHub">
-                        <h3>Go to GitHub</h3>
-                    </div>
-                </a>
-            </div>
-    </section>
+	<section class="projectsHeader">
+		<div class="container">
+			<div class="myTitle">My (un)finished personal projects</div>
+			<a href="https://github.com/OndraSlama">
+				<div class="gitHub">
+					<h3>Go to GitHub</h3>
+				</div>
+			</a>
+		</div>
+	</section>
 
-    <section class="projects">  
-        
-        <div class="container">
+	<section class="projects">
 
-            <div class="textBox">
-                    These are some of my personal projects worked on mainly in my free time (sometimes also during school and in work but ssshhh).
-                    Some of them aren't sill quite finished and few of them never will be. 
-                    Clicking on any of them (except those marked as <i>*Still in progress*</i>) will redirect you either to the actual implementation of the project or to site containing more info (such as youtube video, github repository etc.). 
-                    I hope you will find at least some of them interesting.
-            </div>
-            <!-- <div class="projectOverview">
+		<div class="container">
+
+			<div class="textBox">
+				These are some of my personal projects worked on mainly in my free time (sometimes also during school
+				and in work but ssshhh).
+				Some of them aren't sill quite finished and few of them never will be.
+				Clicking on any of them (except those marked as <i>*Still in progress*</i>) will redirect you either to
+				the actual implementation of the project or to site containing more info (such as youtube video, github
+				repository etc.).
+				I hope you will find at least some of them interesting.
+			</div>
+			<!-- <div class="projectOverview">
                     <a class="inactive" href="https://ondraslama.github.io/JS_SpaceTanks"> <h3>Space Tanks</h3> <img src="./images/SpaceTanks.png"> <p>Game for 2 players written in JavaScript using p5.js library.</p> <p>Controls: Player 1: w-s-a-d-f; Player 2: up-down-left-right-shift. </p> </a>
             </div> -->
-            <a href="https://ondraslama.github.io/SpaceTanks">
-                <div class="projectOverview">
-                    <h3>Space Tanks</h3> <img src="./images/SpaceTanks.png"> <p>Game for 2 players written in JavaScript using p5.js library.</p> <p>Controls: Player 1: w-s-a-d-f; Player 2: up-down-left-right-shift. </p>
-                </div>
-            </a>
+			<a href="https://ondraslama.github.io/SpaceTanks">
+				<div class="projectOverview">
+					<h3>Space Tanks</h3> <img src="./images/SpaceTanks.png">
+					<p>Game for 2 players written in JavaScript using p5.js library.</p>
+					<p>Controls: Player 1: w-s-a-d-f; Player 2: up-down-left-right-shift. </p>
+				</div>
+			</a>
 
-            <a href="https://ondraslama.github.io/TableFootballSimulation/">
-                <div class="projectOverview">
-                    <h3>Table Football</h3> <img src="./images/TableFootball.png"><div> <p>Table football simulated using box2D physics engine. Used for developing strategies for real model of robotic table football model.</p> </div> 
-                </div>
-            </a>
+			<a href="https://ondraslama.github.io/TableFootballSimulation/">
+				<div class="projectOverview">
+					<h3>Table Football Simulation</h3> <img src="./images/TableFootball.png">
+					<div>
+						<p>Table football simulated using box2D physics engine. Used for developing strategies for real
+							model of robotic table football model.</p>
+					</div>
+				</div>
+			</a>
 
-            <a href="https://ondraslama.github.io/PhysicsEngine/"> 
-                <div class="projectOverview">
-                    <h3>Physics Engine</h3> <img src="./images/PhysicsEngine.png"><div> Basic physics Engine built with p5 js library. Supports only circular objects. Later used in Space tank game.</div> 
-                </div>
-            </a>
-            <a href="https://github.com/OndraSlama/StrategySimlation"> 
-                <div class="projectOverview">
-                    <h3>Strategy simulation</h3> <img src="./images/Simulation.png"><div> Strategy simulation for robotic table footbal written in c++. Will be used for reinforced learning of strategy (next year hopefully :D) </div> 
-                </div>
-            </a>
-            <a href="https://www.youtube.com/watch?v=6c86l2iLIZk"> 
-                <div class="projectOverview">
-                    <h3>Hexapot</h3> <img src="./images/Hexapot.png"><div> School project aimed at creating six legged moving robot capable of recognizing specific color (red) using Lego Mindstorm. </div> 
-                </div>
-            </a>   
-            <a href="https://github.com/OndraSlama/SortRunner"> 
-                <div class="projectOverview">
-                    <h3>Sort Runner</h3> <img src="./images/SortRunner.png"><div> Game of sorting and running. Goal is to reach the heaven. You will need to sort your way up there. </div> 
-                </div>
-            </a>  
+			<a href="https://youtu.be/uHA7y0ou33s">
+				<div class="projectOverview">
+					<h3>Robotic Table Football</h3> <img src="./images/RSF.jpg">
+					<div>
+						<p>Team project aiming to create fully competitive robotic table football player.</p>
+					</div>
+				</div>
+			</a>
 
-            <a href="https://github.com/OndraSlama/SlitherAI"> 
-                <div class="projectOverview">
-                    <h3>Neuroevolution Slither</h3> <img src="./images/SlitherAI.png"><div> Slither game coded in python with evoluting Neural Network as NPC players</div> 
-                </div>
-            </a>          
-            <!-- <a href="">  -->
-                <div class="projectOverview">
-                    <h3>Automated blinds</h3> <img src="./images/blinds.png"><div> Automated sunblinds using esp8266, servo and other modules. <p> <i>*Still in progress*</i> </p></div> 
-                </div>
-            <!-- </a> -->
-            
-        </div>
-    </section>    
+			<a href="https://ondraslama.github.io/PhysicsEngine/">
+				<div class="projectOverview">
+					<h3>Physics Engine</h3> <img src="./images/PhysicsEngine.png">
+					<div> Basic physics Engine built with p5 js library. Supports only circular objects. Later used in
+						Space tank game.</div>
+				</div>
+			</a>
+			<a href="https://github.com/OndraSlama/StrategySimlation">
+				<div class="projectOverview">
+					<h3>Strategy simulation</h3> <img src="./images/Simulation.png">
+					<div> Strategy simulation for robotic table footbal written in c++. Will be used for reinforced
+						learning of strategy (next year hopefully :D) </div>
+				</div>
+			</a>
+			<a href="https://www.youtube.com/watch?v=6c86l2iLIZk">
+				<div class="projectOverview">
+					<h3>Hexapot</h3> <img src="./images/Hexapot.png">
+					<div> School project aimed at creating six legged moving robot capable of recognizing specific color
+						(red) using Lego Mindstorm. </div>
+				</div>
+			</a>
+			<a href="https://github.com/OndraSlama/SortRunner">
+				<div class="projectOverview">
+					<h3>Sort Runner</h3> <img src="./images/SortRunner.png">
+					<div> Game of sorting and running. Goal is to reach the heaven. You will need to sort your way up
+						there. </div>
+				</div>
+			</a>
 
-    <footer>
-        <div class="container">
-            <div class="author">
-                <p>Ondřej Sláma</p>
-            </div>
+			<a href="https://github.com/OndraSlama/SlitherAI">
+				<div class="projectOverview">
+					<h3>Neuroevolution Slither</h3> <img src="./images/SlitherAI.png">
+					<div> Slither game coded in python with evoluting Neural Network as NPC players</div>
+				</div>
+			</a>
+			<!-- <a href="">  -->
+			<div class="projectOverview">
+				<h3>Automated blinds</h3> <img src="./images/blinds.png">
+				<div> Automated sunblinds using esp8266, servo and other modules. <p> <i>*In testing phase*</i> </p>
+				</div>
+			</div>
+			<!-- </a> -->
 
-            <div class="contact">
-                <div class="table">
-                    <nav>
-                        <ul class="navUl">
-                            <li class="navLi"><a class="inactive" href="https://www.facebook.com/ondrej.slama.7"> <img src="./images/facebook.svg"></a> </li>
-                            <li class="navLi"><a class="inactive" href="https://www.linkedin.com/in/ondrej-slama42"><img src="./images/linkedin.svg"></a></li>
-                            <li class="navLi"><a class="inactive" href="https://www.instagram.com/mithrandirg14"><img src="./images/instagram.svg"></a></li>
-                        </ul>
-                    </nav>
-                </div>            
-            </div>
-        </div>
-    </footer>
-    
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="author">
+				<p>Ondřej Sláma</p>
+			</div>
+
+			<div class="contact">
+				<div class="table">
+					<nav>
+						<ul class="navUl">
+							<li class="navLi"><a class="inactive" href="https://www.facebook.com/ondrej.slama.7"> <img
+										src="./images/facebook.svg"></a> </li>
+							<li class="navLi"><a class="inactive" href="https://www.linkedin.com/in/ondrej-slama42"><img
+										src="./images/linkedin.svg"></a></li>
+							<li class="navLi"><a class="inactive" href="https://www.instagram.com/mithrandirg14"><img
+										src="./images/instagram.svg"></a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</footer>
+
 </body>
+
 </html>
